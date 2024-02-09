@@ -1,31 +1,31 @@
-# learn.svelte.dev
+# learn.svelte.kr
 
-A soup-to-nuts interactive tutorial on how to build apps with Svelte.
+스벨트로 앱을 빌드하는 방법을 설명하는 대화형 튜토리얼 (번역 주: 원본 저장소는 [learn.svelte.dev](https://github.com/sveltejs/learn.svelte.dev/tree/main)입니다)
 
-## Setup
+## 설치
 
-This repo uses [pnpm](https://pnpm.io/).
+이 저장소는 [pnpm](https://pnpm.io/)을 사용합니다.
 
-## Developing the app
+## 개발
 
-First, run `node scripts/create-common-bundle`. This packages up everything that's needed to run a SvelteKit app (Vite, esbuild, SvelteKit, Svelte compiler, etc.) which can subsequently be unpacked on a server to create and run an instance of a SvelteKit application (which powers the output window of the tutorial). Then, run `dev`:
+먼저, `node scripts/create-common-bundle`을 실행합니다. 실행하면 스벨트킷 앱을 실행하는 데에 필요한 모든 것(Vite, esbuild, SvelteKit, Svelte compiler, etc.)을 패키지화하며, 이후 서버에서 압축을 풀어서 스벨트킷 애플리케이션 인스턴스를 생성하고 실행할 수 있습니다(튜토리얼의 출력 창을 구동합니다). 그리고 `dev`를 실행합니다.:
 
 ```bash
 node scripts/create-common-bundle
 pnpm dev
 ```
 
-To build for production and run locally:
+프로덕션용으로 빌드하고 로컬에서 실행하려면 다음처럼 합니다:
 
 ```bash
 pnpm build
 pnpm preview
 ```
 
-## Creating new tutorials
+## 새 튜토리얼 만들기
 
-Tutorials live inside `content`. Each tutorial consists of a `README.md`, which is the text to the left, and `app-a` and `app-b` folders, which represent the initial and solved state. Files that stay the same can be omitted from `app-b`. Files are marked as deleted in `app-b` if they start with `__delete`. Folders that are marked as deleted in `app-b` if they contain a file named `__delete`.
+튜토리얼은 `content` 안에 있습니다. 각 튜토리얼은 화면 왼쪽에 있는 `README.md`와, 튜토리얼 코드 초기 상태인 `app-a`, 해결 상태인 `app-b` 폴더로 구성됩니다. 두 상태가 동일하게 유지되는 파일은 `app-b`에서 생략할 수 있습니다. `app-b`에서 `__delete`로 시작하는 파일은 삭제된 것으로 표시됩니다. 또한 `app-b`에서 `__delete`를 포함한 이름의 폴더는 삭제된 것으로 표시됩니다.
 
-## Bumping tutorial dependencies
+## 튜토리얼의 종속성 버전 올리기
 
-Bump the dependency (for example Svelte) in both the root and the `content/common` `package.json`. In the root do `pnpm i` (to update `pnpm-lock.yaml`), in `content/common` do `npm i` (to update `package-lock.json`).
+루트와  `content/common` `package.json` 의 디펜던시(예를 들어 스벨트)의 버전을 올리세요. 루트에서 `pnpm i` 를 실행하고 (`pnpm-lock.yaml`를 업데이트하기 위해서), `content/common`에서 `npm i`를 실행하세요(`package-lock.json`를 업데이트하기 위해서).
