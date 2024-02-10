@@ -2,11 +2,11 @@
 title: 페이지
 ---
 
-스벨트킷은 파일시스템 기반의 라우팅을 사용합니다. 이것은 사용자가 특정 URL로 이동할 때의 앱의 동작이 코드의 디렉토리에 의해 정의된다는 뜻입니다.
+스벨트킷은 파일시스템 기반의 라우팅을 사용합니다. 이것은 사용자가 특정 URL로 이동할 때의 앱 동작이 코드의 디렉토리에 의해 정의된다는 뜻입니다.
 
 `src/routes` 안의 모든 `+page.svelte` 파일은 앱의 페이지를 생성합니다. 이 앱에서는 현재 `/` 에 매핑되는 하나의 앱 페이지 `src/routes/+page.svelte`만 존재합니다. 만약 우리가 `/about`, 으로 이동하면, 404 Not Found 에러를 마주할 것입니다.
 
-이제 수정해봅시다. `src/routes/+page.svelte`의 내용을 복사해서 두 번째 페이지 `src/routes/about/+page.svelte`를 성성하고, 갱신해보세요.
+수정해봅시다. `src/routes/+page.svelte`의 내용을 복사해서 두 번째 페이지 `src/routes/about/+page.svelte`를 성성하고, 갱신해보세요.
 
 ```svelte
 /// file: src/routes/about/+page.svelte
