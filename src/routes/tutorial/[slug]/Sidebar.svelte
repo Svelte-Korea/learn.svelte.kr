@@ -14,7 +14,7 @@
 
 	const dispatch = createEventDispatcher();
 
-	const namespace = 'learn.svelte.dev';
+	const namespace = 'learn.svelte.kr';
 	const copy_enabled = `${namespace}:copy_enabled`;
 
 	let show_modal = false;
@@ -75,9 +75,9 @@
 			target="_blank"
 			rel="noreferrer"
 			class="edit"
-			href="https://github.com/sveltejs/learn.svelte.dev/tree/main/{exercise.dir}"
+			href="https://github.com/svelte-korea/learn.svelte.kr/tree/main/{exercise.dir}"
 		>
-			Edit this page
+			이 페이지 수정하기
 		</a>
 	</footer>
 </section>
@@ -88,8 +88,8 @@
 			<h2>Copy and paste is currently disabled!</h2>
 
 			<p>
-				We recommend typing the code into the editor to complete the exercise, as this results in
-				better retention and understanding.
+				더 잘 기억하고 이해하기 위해 에디터에 코드를 직접 입력해서
+				연습 문제를 해결해보는 것을 추천합니다.
 			</p>
 			<label>
 				<input
@@ -98,7 +98,7 @@
 						sessionStorage[copy_enabled] = e.currentTarget.checked ? 'true' : '';
 					}}
 				/>
-				enable copy-and-paste for the duration of this session
+				이 세션에서 복사-붙여넣기 허용
 			</label>
 
 			<button on:click={() => (show_modal = false)}>OK</button>
