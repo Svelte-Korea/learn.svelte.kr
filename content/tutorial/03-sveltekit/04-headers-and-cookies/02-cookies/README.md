@@ -34,7 +34,7 @@ export function load({ cookies }) {
 
 이제, iframe을 다시 불러오면, `Hello stranger!`는 `Hello friend!`가 되어 있을 것입니다.
 
-`cookies.set(name, ...)`를 호출하는 것은 `Set-Cookie` 헤더를 변경하게 하지만, 쿠키의 내부 맵 _또한_ 업데이트 됩니다. 이후 같은 요청에서는 업데이트 된 값을 반환됩니다. 내부적으로는, `cookies` API는 유명한 `cookie` 패키지를 사용하며, `cookies.get`과 `cookies.set` 에 전달되는 옵션들은 `cookie` [문서](https://github.com/jshttp/cookie#api)의 `serialize`와 `cookie`에 대응됩니다. SvelteKit 은 쿠키 보안을 위해 다음 값을들 기본값으로 설정해 놓았습니다.
+`cookies.set(name, ...)`를 호출하는 것은 `Set-Cookie` 헤더를 변경하게 하지만, 쿠키의 내부 맵 _또한_ 업데이트 됩니다. 이후 같은 요청에서는 업데이트 된 값을 반환됩니다. 내부적으로는, `cookies` API는 유명한 `cookie` 패키지를 사용하며, `cookies.get`과 `cookies.set` 에 전달되는 옵션들은 `cookie` [문서](https://github.com/jshttp/cookie#api)의 `serialize`와 `cookie`에 대응됩니다. 스벨트킷은 쿠키 보안을 위해 다음 값을들 기본값으로 설정해 놓았습니다.
 
 ```js
 /// no-file
