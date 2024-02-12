@@ -2,9 +2,9 @@
 title: Nested components
 ---
 
-It would be impractical to put your entire app in a single component. Instead, we can import components from other files and include them in our markup.
+전체 앱을 하나의 컴포넌트만을 사용해 만드는 것은 실용적이지 않습니다. 대신에, 다른 파일에서 여러 컴포넌트를 불러와 마크업에서 사용할 수 있습니다.
 
-Add a `<script>` tag to the top of `App.svelte` that imports `Nested.svelte`...
+`Nested.svelte`를 불러오는 `<script>` 태그를 `App.svelte`의 최상단에 추가하면 ...
 
 ```svelte
 /// file: App.svelte
@@ -13,7 +13,7 @@ Add a `<script>` tag to the top of `App.svelte` that imports `Nested.svelte`...
 </script>+++
 ```
 
-...and include a `<Nested />` component:
+... 그리고 `<Nested />` 를 추가합니다.
 
 ```svelte
 /// file: App.svelte
@@ -21,6 +21,6 @@ Add a `<script>` tag to the top of `App.svelte` that imports `Nested.svelte`...
 +++<Nested />+++
 ```
 
-Notice that even though `Nested.svelte` has a `<p>` element, the styles from `App.svelte` don't leak in.
+`Nested.svelte`가 `<p>` 요소를 포함하지만, `App.svelte`의 스타일이 적용되지 않음을 유의하세요.
 
-> Component names are always capitalised, to distinguish them from HTML elements.
+> HTML 요소와 구분을 위해, 컴포넌트 이름은 항상 대문자로 시작합니다.
