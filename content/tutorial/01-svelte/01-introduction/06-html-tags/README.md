@@ -2,15 +2,15 @@
 title: HTML tags
 ---
 
-Ordinarily, strings are inserted as plain text, meaning that characters like `<` and `>` have no special meaning.
+일반적으로 문자열은 일반 텍스트로 삽입되므로 < 및 >과 같은 문자는 특별한 의미가 없습니다.
 
-But sometimes you need to render HTML directly into a component. For example, the words you're reading right now exist in a markdown file that gets included on this page as a blob of HTML.
+하지만 때로는 HTML을 컴포넌트에 직접 렌더링해야 할 때가 있습니다. 예를 들어, 지금 읽고 있는 단어는 마크다운 파일에 존재하며 이 페이지에 HTML 덩어리로 포함됩니다.
 
-In Svelte, you do this with the special `{@html ...}` tag:
+Svelte에서는 특수 {@html ...} 태그를 사용하여 이 작업을 수행합니다:
 
 ```svelte
 /// file: App.svelte
 <p>{+++@html+++ string}</p>
 ```
 
-> **Warning!** Svelte doesn't perform any sanitization of the expression inside `{@html ...}` before it gets inserted into the DOM. This isn't an issue if the content is something you trust like an article you wrote yourself. However if it's some untrusted user content, e.g. a comment on an article, then it's critical that you manually escape it, otherwise you risk exposing your users to <a href="https://owasp.org/www-community/attacks/xss/" target="_blank">Cross-Site Scripting</a> (XSS) attacks.
+> **경고!** Svelte는 {@html ...} 내부의 표현식이 DOM에 삽입되기 전에 어떠한 sanitization도 수행하지 않습니다. 콘텐츠가 직접 작성한 글처럼 신뢰할 수 있는 내용이라면 문제가 되지 않습니다. 그러나 신뢰할 수 없는 사용자 콘텐츠(예: 기사의 댓글)인 경우에는 수동으로 이스케이프 처리해야 하며, 그렇지 않으면 사용자가 <a href="https://owasp.org/www-community/attacks/xss/" target="_blank">크로스 사이트 스크립팅</a> (XSS) 공격에 노출될 위험이 있습니다.
