@@ -39,7 +39,7 @@
 				<span class="large"><Icon name="discord" /></span>
 			</a>
 
-			<a href="https://github.com/sveltejs/learn.svelte.dev" title="GitHub Repo">
+			<a href="https://github.com/Svelte-Korea/learn.svelte.kr" title="GitHub Repo">
 				<span class="small">GitHub</span>
 				<span class="large"><Icon name="github" /></span>
 			</a>
