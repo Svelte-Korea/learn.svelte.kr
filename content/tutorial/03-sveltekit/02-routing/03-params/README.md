@@ -1,5 +1,5 @@
 ---
-title: 경로 파라미터
+title: 경로 파라미터(Route parameters)
 path: /blog
 ---
 
