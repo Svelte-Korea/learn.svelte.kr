@@ -13,7 +13,7 @@ title: Nested components
 </script>+++
 ```
 
-... 그리고 `<Nested />` 를 추가합니다.
+... 그리고 `<Nested />` 를 추가하면...
 
 ```svelte
 /// file: App.svelte
