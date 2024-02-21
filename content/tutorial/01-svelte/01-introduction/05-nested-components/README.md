@@ -21,6 +21,6 @@ title: Nested components
 +++<Nested />+++
 ```
 
-`Nested.svelte`가 `<p>` 요소를 포함하지만, `App.svelte`의 스타일이 적용되지 않음을 유의하세요.
+`Nested.svelte`가 `<p>` 요소를 포함하지만, `App.svelte`의 스타일이 적용되지 않음을 확인해 보세요.
 
 > HTML 요소와 구분을 위해, 컴포넌트 이름은 항상 대문자로 시작합니다.
