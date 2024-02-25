@@ -1,16 +1,16 @@
 ---
-title: Basics
+title: 기본
 ---
 
-In the chapter on [loading data](/tutorial/page-data), we saw how you can export `load` functions from `+page.js`, `+page.server.js`, `+layout.js` and `+layout.server.js` files. We can also export various **page options** from these modules:
+[loading data](/tutorial/page-data)에서는 `+page.js`, `+page.server.js`, `+layout.js` 및 `+layout.server.js` 파일에서 `load` 함수를 내보내는 방법을 살펴보았습니다. 이러한 모듈에서는 다양한 **페이지 옵션**도 내보낼 수 있습니다.
 
-- `ssr` — whether or not pages should be server-rendered
-- `csr` — whether to load the SvelteKit client
-- `prerender` — whether to prerender pages at build time, instead of per-request
-- `trailingSlash` — whether to strip, add, or ignore trailing slashes in URLs
+- `ssr` — 페이지를 서버 렌더링 할지 여부
+- `csr` — 서버에서 렌더링된 HTML을 클라이언트 측에서 렌더링하여 인터렉티브 페이지로 변환할지 여부
+- `prerender` — 요청별이 아닌 빌드 시 페이지를 미리 렌더링 할지 여부
+- `trailingSlash` — URL의 트레일링 슬래시를 제거, 추가 또는 무시할지 여부 
 
-In the following exercises, we'll learn about each of these in turn.
+다음 연습에서는 이들 각각에 대해 차례로 알아봅니다.
 
-Page options can apply to individual pages (if exported from `+page.js` or `+page.server.js`), or groups of pages (if exported from `+layout.js` or `+layout.server.js`). To define an option for the whole app, export it from the root layout. Child layouts and pages override values set in parent layouts, so — for example — you can enable prerendering for your entire app then disable it for pages that need to be dynamically rendered.
+페이지 옵션은 개별 페이지(`+page.js` 또는 `+page.server.js`에서 내보낸 경우) 또는 페이지 그룹(`+layout.js` 또는 `+layout.server.js`에서 내보낸 경우)에 적용될 수 있습니다. 페이지 전체에 대한 옵션을 정의하려면 루트 레이아웃에서 내보내세요. 하위 레이아웃과 페이지는 상위 레이아웃에 설정된 값을 재정의합니다. 전체 앱에 대해 사전 렌더링을 활성화한 다음 동적으로 렌더링 해야 하는 페이지에 대해 사전 렌더링을 비활성화할 수 있습니다.
 
-You can mix and match these options in different areas of your app — you could prerender your marketing pages, dynamically server-render your data-driven pages, and treat your admin pages as a client-rendered SPA. This makes SvelteKit very versatile.
+앱의 다양한 영역에서 이러한 옵션을 혼합 및 매치할 수 있습니다. 즉, 마케팅 페이지는 사전 렌더링하고, 데이터 기반 페이지는 동적으로 서버 렌더링하며, 어드민 페이지는 클라이언트에서 렌더링되는 SPA로 처리할 수 있습니다. 이는 스벨트킷을 매우 다재다능하게 만듭니다.
