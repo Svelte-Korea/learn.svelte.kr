@@ -9,7 +9,7 @@ title: 인 앤 아웃
 import { +++fade+++, fly } from 'svelte/transition';
 ```
 
-`transition` 지시어를 `in` 과 `out` 불리된 지시어로 바꿔 봅시다.
+`transition` 지시어를 분리된 `in` 과 `out` 지시어로 바꿔 봅시다.
 
 ```svelte
 /// file: App.svelte
