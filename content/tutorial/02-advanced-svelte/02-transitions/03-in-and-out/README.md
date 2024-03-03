@@ -18,4 +18,4 @@ import { +++fade+++, fly } from 'svelte/transition';
 </p>
 ```
 
-이 경우엔, 전환은 되돌릴 수 _없습니다_.
+이 경우엔, 전환은 되돌릴 수 _없습니다._
