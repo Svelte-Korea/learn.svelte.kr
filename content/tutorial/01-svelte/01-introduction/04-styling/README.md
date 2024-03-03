@@ -1,5 +1,5 @@
 ---
-title: Styling
+title: 스타일링(Styling)
 ---
 
 HTML에서와 같이, `<style>` 태그를 컴포넌트에 추가할 수 있습니다. `<p>` 요소에 스타일을 추가해 봅시다.

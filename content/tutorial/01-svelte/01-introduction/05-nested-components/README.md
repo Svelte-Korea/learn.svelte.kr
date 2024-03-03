@@ -1,5 +1,5 @@
 ---
-title: Nested components
+title: 중첩된 컴포넌트(Nested components)
 ---
 
 전체 앱을 하나의 컴포넌트만을 사용해 만드는 것은 실용적이지 않습니다. 대신에, 다른 파일에서 여러 컴포넌트를 불러와 마크업에서 사용할 수 있습니다.
