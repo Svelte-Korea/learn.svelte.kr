@@ -1,8 +1,8 @@
 ---
-title: Custom CSS transitions
+title: 커스텀 CSS 전환
 ---
 
-The `svelte/transition` module has a handful of built-in transitions, but it's very easy to create your own. By way of example, this is the source of the `fade` transition:
+`svelte/transition` 모듈에는 몇 가지 전환이 내장되어 있지만, 자신만의 전환 또한 쉽게 만들 수 있습니다. 예시로 `fade` 전환의 코드를 다뤄보겠습니다.
 
 ```js
 /// no-file
@@ -17,19 +17,19 @@ function fade(node, { delay = 0, duration = 400 }) {
 }
 ```
 
-The function takes two arguments — the node to which the transition is applied, and any parameters that were passed in — and returns a transition object which can have the following properties:
+이 함수는 전환이 적용될 노드와 내부로 전달될 다른 파라미터들 두 개의 인자를 받아 아래 속성들이 적용된 전환 객체를 반환합니다.
 
-- `delay` — milliseconds before the transition begins
-- `duration` — length of the transition in milliseconds
-- `easing` — a `p => t` easing function (see the chapter on [tweening](/tutorial/tweens))
-- `css` — a `(t, u) => css` function, where `u === 1 - t`
-- `tick` — a `(t, u) => {...}` function that has some effect on the node
+- `delay` — 전환이 시작하기까지 걸리는 시간(milliseconds 단위)
+- `duration` — 전환의 길이(milliseconds 단위)
+- `easing` — `p => t` 이징 함수.([트윈](/tutorial/tweens) 챕터를 참고하세요.)
+- `css` — `u === 1 - t`인 `(t, u) => css` 함수.
+- `tick` — 노드에 영향을 주는 `(t, u) => {...}` 함수.
 
-The `t` value is `0` at the beginning of an intro or the end of an outro, and `1` at the end of an intro or beginning of an outro.
+`t` 값은 등장의 첫 시점이나 퇴장의 마지막 시점에 `0`이 됩니다. 등장의 마지막과 퇴장의 첫 시점에는 `1`이 됩니다.
 
-Most of the time you should return the `css` property and _not_ the `tick` property, as CSS animations run off the main thread to prevent jank where possible. Svelte 'simulates' the transition and constructs a CSS animation, then lets it run.
+대부분의 경우 `tick` 속성을 반환하면 _안되고_ `css` 속성을 반환해야 합니다. 왜냐하면 CSS 애니메이션은 UI 가 느려지는 걸 방지하기 위해 메인 스레드와 별개로 작동해야 하기 때문입니다. 스벨트는 전환을 '시뮬레이션' 하고 CSS 애니메이션을 생성 후 실행하도록 합니다.
 
-For example, the `fade` transition generates a CSS animation somewhat like this:
+예를 들어, `fade` 전환은 아래 같은 CSS 애니메이션을 만듭니다.
 
 ```css
 /// no-file
@@ -40,7 +40,7 @@ For example, the `fade` transition generates a CSS animation somewhat like this:
 100% { opacity: 1 }
 ```
 
-We can get a lot more creative though. Let's make something truly gratuitous:
+어쨌든, 더 창의적인 것도 만들 수 있습니다. 진짜 쓸데없는 걸 한 번 만들어 봅시다.
 
 ```svelte
 /// file: App.svelte
@@ -69,4 +69,4 @@ We can get a lot more creative though. Let's make something truly gratuitous:
 </script>
 ```
 
-Remember: with great power comes great responsibility.
+명심하세요. 큰 힘에는 큰 책임이 따릅니다.

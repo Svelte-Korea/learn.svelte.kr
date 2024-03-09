@@ -1,12 +1,12 @@
 ---
-title: Global transitions
+title: 전역 전환
 ---
 
-Ordinarily, transitions will only play on elements when their direct containing block is added or destroyed. In the example here, toggling the visibility of the entire list does not apply transitions to individual list elements.
+보통, 전환은 그 요소를 담고 있는 블록이 추가되거나 삭제될 때 재생됩니다. 이 예시에서, 전체 리스트가 보이지 않도록 바꿔도 개별 리스트 요소에는 전환이 적용되지 않습니다.
 
-Instead, we'd like transitions to not only play when individual items are added and removed with the slider but also when we toggle the checkbox.
+슬라이더로 아이템을 추가하거나 제거할 때만 전환이  재생되는 대신에 체크박스를 클릭할 때에도 적용되도록 하고 싶습니다.
 
-We can achieve this with a _global_ transition, which plays when _any_ block containing the transitions is added or removed:
+_전역(global)_ 전환을 사용하면 가능합니다. 전환을 포함한 _아무_ 블록이 추가되거나 제거될 때 전환이 재생됩니다.
 
 ```svelte
 /// file: App.svelte
@@ -15,4 +15,4 @@ We can achieve this with a _global_ transition, which plays when _any_ block con
 </div>
 ```
 
-> In Svelte 3, transitions were global by default and you had to use the `|local` modifier to make them local.
+> 스벨트 3에서는 전역 전환이 기본값이었고, 로컬 적으로 적용하기 위해선 `|local` 모디파이어를 사용해야 했습니다.

@@ -1,8 +1,8 @@
 ---
-title: Custom JS transitions
+title: 커스텀 JS 전환
 ---
 
-While you should generally use CSS for transitions as much as possible, there are some effects that can't be achieved without JavaScript, such as a typewriter effect:
+전환을 만드는데 CSS를 사용하는 것이 일반적으로 권장되긴 하지만, 자바스크립트 없이 만들 수 없는 효과도 있습니다. 타자기 효과가 그 예시입니다.
 
 ```js
 /// file: App.svelte

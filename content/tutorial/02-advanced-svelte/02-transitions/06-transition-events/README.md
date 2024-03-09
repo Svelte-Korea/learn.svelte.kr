@@ -1,8 +1,8 @@
 ---
-title: Transition events
+title: 전환 이벤트
 ---
 
-It can be useful to know when transitions are beginning and ending. Svelte dispatches events that you can listen to like any other DOM event:
+전환의 시작과 끝을 알면 유용할 때가 많습니다. 스벨트는 다른 DOM 이벤트와 같이 처리할 수 있는 이벤트를 발생시킵니다.
 
 ```svelte
 /// file: App.svelte
