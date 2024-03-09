@@ -1,5 +1,5 @@
 ---
-title: 기본(Basics)
+title: 기본
 ---
 
 [loading data](/tutorial/page-data)에서는 `+page.js`, `+page.server.js`, `+layout.js` 및 `+layout.server.js` 파일에서 `load` 함수를 내보내는 방법을 살펴보았습니다. 이러한 모듈에서는 다양한 **페이지 옵션**도 내보낼 수 있습니다.
