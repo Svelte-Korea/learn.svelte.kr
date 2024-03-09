@@ -28,26 +28,26 @@ title: 사전 로딩
 
 속성에 다음 값 중 하나를 지정하여 동작을 사용자 정의할 수 있습니다.
 
-- `"hover"` 마우스가 링크 위에 올라갈 때 사전 로딩 시작(기본값, 모바일에서는 `"tap"` 으로 대체)
+- `"hover"` — 마우스가 링크 위에 올라갈 때 사전 로딩 시작(기본값, 모바일에서는 `"tap"` 으로 대체)
 - `"tap"` — 탭할 때만 사전 로딩 시작
 - `"off"` — 사전 로딩 비활성화
 
-`data-sveltekit-preload-data`를 사용하면 페이지의 모든 내용이 로드되지만, 때로는 데이터 로드를 원치 않을 수도 있습니다. `data-sveltekit-preload-code` 속성을 사용하면 데이터를 로드하지 않고 특정 경로에 필요한 JavaScript만 미리 로드할 수 있습니다. 이 속성은 다음 값을 가집니다.
+`data-sveltekit-preload-data`를 사용하면 페이지의 모든 내용이 로드되지만, 때로는 데이터 로드를 원치 않을 수도 있습니다(예를 들어, 경로 탐색이 발생하지 않을 것으로 예상하여 데이터를 로드하는 경우). `data-sveltekit-preload-code` 속성을 사용하면 데이터를 로드하지 않고 특정 경로에 필요한 JavaScript만 미리 로드할 수 있습니다. 이 속성은 다음 값을 가집니다.
 
-- `"eager"` — 페이지의 모든 내용을 미리 로드합니다.
-- `"viewport"` — 뷰포트에 나타나는 모든 것을 미리 로드합니다.
-- `"hover"` (기본값) 위와 동일
-- `"tap"` — 위와 동일
-- `"off"` — 위와 동일
+- `"eager"` — 페이지의 모든 내용 미리 로드
+- `"viewport"` — 뷰포트에 나타나는 모든 것을 미리 로드
+- `"hover"` — 마우스가 링크 위에 올라갈 때 사전 로딩 시작(기본값, 모바일에서는 `"tap"` 으로 대체)
+- `"tap"` — 탭할 때만 사전 로딩 시작
+- `"off"` — 사전 로딩 비활성화
 
 또한 프로그래밍적으로도 `$app/navigation`에서 가져온 `preloadCode` 와 `preloadData`를 사용하여 사전 로딩을 할 수도 있습니다.
 ```js
 /// no-file
 import { preloadCode, preloadData } from '$app/navigation';
 
-// preload the code and data needed to navigate to /foo
+// /foo로 이동하는 데 필요한 코드와 데이터를 미리 로드합니다
 preloadData('/foo');
 
-// preload the code needed to navigate to /bar, but not the data
+// /bar로 이동하는 데 필요한 코드를 미리 로드하지만 데이터는 로드하지 않습니다
 preloadCode('/bar');
 ```
