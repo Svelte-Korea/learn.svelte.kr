@@ -1,5 +1,5 @@
-// In a real app, this data would live in a database,
-// rather than in memory. But for now, we cheat.
+// 실제 앱에서 이 데이터는 인메모리가 아닌, 실제 DB에 있는 데이터일 것입니다.
+// 지금은 그냥 속여쓰는 것입니다. 
 const db = new Map();
 
 export function getTodos(userid) {
