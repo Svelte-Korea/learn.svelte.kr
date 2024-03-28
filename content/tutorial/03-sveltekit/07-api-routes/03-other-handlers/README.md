@@ -2,7 +2,7 @@
 title: 기타 핸들러
 ---
 
-다른 HTTP 메쏘드에 대해서도 비슷하게 핸들러를 만들 수 있습니다. `src/lib/server/database.js`에 있는 `toggleTodo` 와 `deleteTodo` 를 이용해 할 일을 껐다 켜도록 `PUT` 과 `DELETE` 핸들러를 `src/routes/todo/[id]/+server.js`에 만들어, `/todo/[id]` 라우트를 추가합시다.
+다른 HTTP 메서드에 대해서도 비슷하게 핸들러를 만들 수 있습니다. `src/lib/server/database.js`에 있는 `toggleTodo` 와 `deleteTodo` 를 이용해 할 일을 껐다 키고 삭제할 수 있도록 `src/routes/todo/[id]/+server.js`에 `PUT` 과 `DELETE` 핸들러를 만들어,  `/todo/[id]` 라우트를 추가합시다.
 
 ```js
 /// file: src/routes/todo/[id]/+server.js
@@ -24,7 +24,7 @@ export async function DELETE({ params, cookies }) {
 }
 ```
 
-브라우저에 실제 데이터를 반환하지 않으니, 비어있는 [리스폰스(response](https://developer.mozilla.org/en-US/docs/Web/API/Response)를 [204 No Content](https://http.dog/204) 상태코드로 반환하도록 합시다.
+브라우저에 실제 데이터를 반환할 필요가 없으니, 비어있는 [리스폰스(response)](https://developer.mozilla.org/en-US/docs/Web/API/Response)를 [204 No Content](https://http.dog/204) 상태코드로 반환하도록 합시다.
 
 이벤트 핸들러를 이용해 이 엔드포인트와 상호작용해 봅시다.
 
