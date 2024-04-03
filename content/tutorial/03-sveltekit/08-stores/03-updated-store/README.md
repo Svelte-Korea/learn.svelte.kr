@@ -1,5 +1,5 @@
 ---
-title: 업데이티드
+title: updated
 ---
 
 `updated` 스토어는 현재 페이지가 열린 순간 기준으로 앱의 새 버전이 배포되었는지 알려주는 `true`, `false` 값을 가지고 있습니다. 이 스토어가 작동하려면, `svelte.config.js`에 `kit.version.pollInterval` 을 명시해야합니다.
