@@ -1,16 +1,16 @@
 ---
-title: Optional parameters
+title: 선택적 매개변수
 ---
 
-In the first chapter on [routing](/tutorial/pages), we learned how to create routes with [dynamic parameters](/tutorial/params).
+[라우팅](/tutorial/pages)에 대한 첫 번째 장에서 [동적 매개변수](/tutorial/params)를 사용하여 경로를 생성하는 방법을 배웠습니다.
 
-Sometimes it's helpful to make a parameter optional. A classic example is when you use the pathname to determine the locale — `/fr/...`, `/de/...` and so on — but you also want to have a default locale.
+때로는 매개변수를 선택적으로 만드는 것이 도움이 됩니다. 대표적인 예로는 `/fr/...`, `/de/...`와 같이 경로명을 사용하여 로케일을 결정하면서 기본 로케일도 가지려는 경우입니다.
 
-To do that, we use double brackets. Rename the `[lang]` directory to `[[lang]]`.
+이를 위해 이중 대괄호를 사용합니다. 디렉토리 `[lang]`의 이름을 `[[lang]]`로 변경하세요.
 
-The app now fails to build, because `src/routes/+page.svelte` and `src/routes/[[lang]]/+page.svelte` would both match `/`. Delete `src/routes/+page.svelte`. (You may need to reload the app to recover from the error page).
+`src/routes/+page.svelte` 와 `src/routes/[[lang]]/+page.svelte` 둘 다 `/`와 일치하기 때문에 앱 빌드에 실패합니다. `src/routes/+page.svelte`를 삭제하세요. (에러 페이지에서 벗어나려면 앱을 다시 로드해야 할 수도 있습니다.)
 
-Lastly, edit `src/routes/[[lang]]/+page.server.js` to specify the default locale:
+마지막으로, `src/routes/[[lang]]/+page.server.js` 를 수정하여 기본 로케일을 지정하세요.
 
 ```js
 /// file: src/routes/[[lang]]/+page.server.js
