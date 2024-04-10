@@ -23,15 +23,32 @@
 
 ### 번역 규칙
 
-- 기존 원본 문장과 어순이 다르더라도 한국어 문장기호를 사용하기
-  - 과도한 괄호 사용 피하기
-  - `:`(colon)과 `—`(dash) 사용 피하기
-- 주어와 복수형 표기가 생략이 가능한 경우 생략해서 자연스러운 문장 만들기
-- 'Svelte' 와 'SvelteKit'은 각각 '스벨트', '스벨트킷'으로 쓰기
-- 스벨트에서 만든 조어의 경우 음차 표기
-  - 단, 처음 쓰이거나 강조가 되어 있는 경우 `음차(원본)` 형식으로 표기
-    - 예시: `라우팅(routing)`, `로딩(loading)`
-- 예시 코드 내부에 있는 주석을 번역하기
+#### 1. 기존 원본 문장과 어순이 다르더라도 한국어 문장기호를 사용하기
+
+- 과도한 괄호 사용 피하기
+- `:`(colon)과 `—`(dash) 사용 피하기
+
+<details>
+<summary>예시</summary>
+
+- `:`(colon)을 사용하는 대신 나열을 통해 자연스러운 문장을 만든 예시입니다.
+- 원문
+  - > SvelteKit allows you to create more than just pages. We can also create API routes by adding a +server.js file that exports functions corresponding to HTTP methods: GET, PUT, POST, PATCH and DELETE.
+- 번역
+  - > 스벨트킷을 이용하면 페이지를 만드는 것 말고도, API 라우트를 만들 수 있습니다. GET, PUT, POST, PATCH, DELETE 등의 HTTP 메소드에 대응하는 함수를 내보내는 +server.js 파일을 만들면 됩니다.
+
+</details>
+
+#### 2. 주어와 복수형 표기가 생략이 가능한 경우 생략해서 자연스러운 문장 만들기
+
+#### 3. 'Svelte' 와 'SvelteKit'은 각각 '스벨트', '스벨트킷'으로 쓰기
+
+#### 4. 스벨트에서 만든 조어의 경우 음차 표기
+
+- 단, 처음 쓰이거나 강조가 되어 있는 경우 `음차(원본)` 형식으로 표기
+- 예시: `라우팅(routing)`, `로딩(loading)`
+
+#### 5. 예시 코드 내부에 있는 주석을 번역하기
 
 ### 번역 팁
 
