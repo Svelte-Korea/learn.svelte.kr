@@ -4,7 +4,7 @@ title: page
 
 [이전](writable-stores)에 배웠듯이, 스벨트 스토어는 한 컴포넌트에만 속해있지 않은 값을 넣는 곳입니다.
 
-스벨트킷은 3가지 기본 스토어를 `$app.stores` 모듈을 통해 제공합니다. `page`, `navigating` 그리고 `updated`입니다. 가장 자주 사용하게 될 스토어는 [`page`](https://kit.svelte.dev/docs/types#public-types-page)입니다. 현재 페이지에 관한 정보를 제공하는 스토어입니다.
+스벨트킷은 `$app/stores` 모듈을 통해 기본 스토어를 제공합니다. 3가지 기본 스토어는 `page`, `navigating`, `updated`입니다. 가장 자주 사용하게 될 스토어는 page입니다. 이는 현재 페이지에 관한 정보를 제공하는 스토어입니다.
 
 * `url` — 현재 페이지의 [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL)
 * `params` — 현재 페이지의 [파라미터](params)
