@@ -1,6 +1,6 @@
 # learn.svelte.kr
 
-스벨트로 앱을 빌드하는 방법을 설명하는 대화형 튜토리얼 (번역 주: 원본 저장소는 [learn.svelte.dev](https://github.com/sveltejs/learn.svelte.dev/tree/main)입니다)
+스벨트로 앱을 빌드하는 방법을 설명하는 대화형 튜토리얼 (번역 주: 원본 저장소는 [learn.svelte.dev](https://github.com/sveltejs/learn.svelte.dev/tree/main)입니다. 번역 기여를 원하신다면 [CONTRIBUTING.md](CONTRIBUTING.md)를 읽어주세요.)
 
 ## 설치
 
