@@ -1,10 +1,10 @@
 ---
-title: POST 핸들러.
+title: POST 핸들러
 ---
 
 데이터를 변경하기 위한 `POST` 와 같은 요청들도 처리할 수 있습니다. 대부분의 경우엔 [폼 액션](the-form-element)를 대신 사용하는 것이 더 편합니다. 코드도 더 짧고, 자바스크립트 없이도 작동하며, 더 유연하기(resilient) 때문입니다.
 
-'add a todo' <input> 안의 keydown 이벤트 핸들러에서, 서버로 데이터를 POST 해 봅시다.
+'add a todo' `<input>` 안의 keydown 이벤트 핸들러에서, 서버로 데이터를 POST 해 봅시다.
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -49,9 +49,9 @@ export async function POST({ request, cookies }) {
 }
 ```
 
-`load` 함수와 폼 액션과 마찬가지로, `request`는 표준 `[리퀘스트(Request)](https://developer.mozilla.org/en-US/docs/Web/API/Request)` 객체입니다. 그러므로 `await request.json()`는 이벤트 핸들러로 포스트 된 데이터를 반환합니다.
+`load` 함수와 폼 액션과 마찬가지로, `request`는 표준 [리퀘스트(Request)](https://developer.mozilla.org/en-US/docs/Web/API/Request) 객체입니다. 그러므로 `await request.json()`는 이벤트 핸들러로 포스트 된 데이터를 반환합니다.
 
- 데이터베이스에 새롭게 생긴 할 일의 `id` 를 [201 Created](https://http.dog/201) 상태 코드로 반환하고 있습니다. 이벤트 핸들러에서 이 값을 이용해 페이지를 업데이트 해도록 바꿔 봅시다.
+데이터베이스에 새롭게 생긴 할 일의 `id`를 [201 Created](https://http.dog/201) 상태 코드로 반환하고 있습니다. 이벤트 핸들러에서 이 값을 이용해 페이지를 업데이트 해도록 바꿔 봅시다.
 
 ```svelte
 /// file: src/routes/+page.svelte
