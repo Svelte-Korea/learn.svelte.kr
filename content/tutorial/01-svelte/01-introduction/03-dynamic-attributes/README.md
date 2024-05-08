@@ -24,7 +24,7 @@ title: 동적 어트리뷰트
 <img src={src} +++alt="A man dances."+++ />
 ```
 
-속성 _안에_ 중괄호를 사용할 수 있습니다. 위 내용을 `"{name} dances."` 로 바꿔보세요. `name` 변수는 `<script>` 블록 안에 선언되어 있다는 것을 기억하세요.
+어트리뷰트 _안에_ 중괄호를 사용할 수 있습니다. 위 내용을 `"{name} dances."` 로 바꿔보세요. `name` 변수는 `<script>` 블록 안에 선언되어 있다는 것을 기억하세요.
 
 ## Shorthand attributes
 
