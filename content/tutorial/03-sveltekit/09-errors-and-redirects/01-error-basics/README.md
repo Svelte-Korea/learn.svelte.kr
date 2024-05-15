@@ -15,7 +15,7 @@ export function load() {
 }
 ```
 
-다른 모든 에러는 예상치 못한 에러로 취급됩니다. `sr/routes/unexpected/+page.server.js` 에 예시가 있습니다.
+다른 모든 에러는 예상치 못한 에러로 취급됩니다. `src/routes/unexpected/+page.server.js` 에 예시가 있습니다.
 
 ```js
 /// file: src/routes/unexpected/+page.server.js
