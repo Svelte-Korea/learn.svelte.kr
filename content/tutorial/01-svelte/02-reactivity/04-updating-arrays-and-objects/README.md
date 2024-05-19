@@ -1,10 +1,14 @@
 ---
-title: Updating arrays and objects
+title: 배열과 객체 업데이트하기
 ---
 
 Because Svelte's reactivity is triggered by assignments, using array methods like `push` and `splice` won't automatically cause updates. For example, clicking the 'Add a number' button doesn't currently do anything, even though we're calling `numbers.push(...)` inside `addNumber`.
 
 One way to fix that is to add an assignment that would otherwise be redundant:
+
+Svelte의 반응성은 할당에 의해 트리거되기 때문에 'push' 및 'splice'와 같은 배열 메서드를 사용하면 자동으로 업데이트가 발생하지 않습니다. 예를 들어, '번호 추가' 버튼을 클릭하면 `addNumber` 내에서 `numbers.push(...)`를 호출하고 있음에도 아무 작업도 수행되지 않습니다.
+
+이 문제를 해결하는 한 가지 방법은 중복되는 할당을 추가하는 것입니다.
 
 ```js
 /// file: App.svelte
@@ -14,7 +18,7 @@ function addNumber() {
 }
 ```
 
-But there's a more idiomatic solution:
+하지만 좀 더 관용적인 해결책이 있습니다.
 
 ```js
 /// file: App.svelte
@@ -23,9 +27,9 @@ function addNumber() {
 }
 ```
 
-You can use similar patterns to replace `pop`, `shift`, `unshift` and `splice`.
+유사한 패턴을 사용하여 `pop`, `shift`, `unshift` 및 `splice`를 대체할 수 있습니다.
 
-Assignments to _properties_ of arrays and objects — e.g. `obj.foo += 1` or `array[i] = x` — work the same way as assignments to the values themselves.
+`obj.foo += 1` 또는 `array[i] = x`과 같은 배열과 객체의 _속성_ 에 대한 할당은 값 자체에 대한 할당과 동일한 방식으로 작동합니다.
 
 ```js
 /// file: App.svelte
@@ -34,7 +38,7 @@ function addNumber() {
 }
 ```
 
-A simple rule of thumb: the name of the updated variable must appear on the left hand side of the assignment. For example this...
+간단한 경험 법칙: 업데이트된 변수의 이름이 할당 왼쪽에 나타나야 합니다. 예를 들어,
 
 ```js
 /// no-file
@@ -43,4 +47,4 @@ const foo = obj.foo;
 foo.bar = 2;
 ```
 
-...won't trigger reactivity on `obj.foo.bar`, unless you follow it up with `obj = obj`.
+이 경우 `obj = obj`로 후속 작업을 수행하지 않는 한 `obj.foo.bar`에 대한 반응성이 나타나지 않습니다.
