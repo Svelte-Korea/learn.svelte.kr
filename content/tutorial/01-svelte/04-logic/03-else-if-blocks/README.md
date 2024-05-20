@@ -1,8 +1,8 @@
 ---
-title: Else-if 블록
+title: Else-if blocks
 ---
 
-여러 조건을 `else if`로 '연결'할 수 있습니다.
+Multiple conditions can be 'chained' together with `else if`:
 
 ```svelte
 /// file: App.svelte
