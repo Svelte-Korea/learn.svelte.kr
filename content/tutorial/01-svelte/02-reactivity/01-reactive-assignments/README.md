@@ -14,7 +14,7 @@ title: 할당
 </button>
 ```
 
-`increment` 함수 내에서 우리가 해야 할 일은 `count` 값을 변경하는 것뿐입니다.
+`increment` 함수 내에서 우리가 해야 하는 일은 `count` 값을 변경하는 것뿐입니다.
 
 ```js
 /// file: App.svelte

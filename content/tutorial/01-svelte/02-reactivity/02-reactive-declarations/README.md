@@ -14,7 +14,7 @@ let count = 0;
 
 반응문이 선언되지 않은 변수에 대한 할당으로만 구성된 경우 Svelte는 사용자를 대신하여 `let` 선언을 삽입합니다.
 
-> 조금 낯설게 보이더라도 걱정하지 마세요. 이는 (기존에 얽매이지 않는 경우) [유효한](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label) JavaScript이며, Svelte는 참조된 값이 변경될 때마다 '언제든지 이 코드를 다시 실행'한다는 의미로 해석합니다. 여기에 익숙해지면 원래대로 돌아가실 수 없을 겁니다.
+> 조금 낯설게 보이더라도 걱정하지 마세요. 이는 통상적이지 않지만 [유효한](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/label) JavaScript이며, Svelte는 '언제든지 참조된 값이 변경될 때마다 이 코드를 다시 실행'한다는 의미로 해석합니다. 여기에 익숙해지면 다시 돌아가실 수 없을 겁니다.
 
 마크업에 `doubled`를 사용해 보겠습니다.
 

@@ -6,7 +6,7 @@ Because Svelte's reactivity is triggered by assignments, using array methods lik
 
 One way to fix that is to add an assignment that would otherwise be redundant:
 
-Svelte의 반응성은 할당에 의해 트리거되기 때문에 'push' 및 'splice'와 같은 배열 메서드를 사용하면 자동으로 업데이트가 발생하지 않습니다. 예를 들어, '번호 추가' 버튼을 클릭하면 `addNumber` 내에서 `numbers.push(...)`를 호출하고 있음에도 아무 작업도 수행되지 않습니다.
+스벨트의 반응성은 할당에 의해 트리거되기 때문에 `push` 및 `splice`와 같은 배열 메서드를 사용하면 자동으로 업데이트가 발생하지 않습니다. 예를 들어, 'Add a number' 버튼을 클릭하면 `addNumber` 내에서 `numbers.push(...)`를 호출하고 있음에도 아무 작업도 수행되지 않습니다.
 
 이 문제를 해결하는 한 가지 방법은 중복되는 할당을 추가하는 것입니다.
 
@@ -38,7 +38,7 @@ function addNumber() {
 }
 ```
 
-간단한 경험 법칙: 업데이트된 변수의 이름이 할당 왼쪽에 나타나야 합니다. 예를 들어,
+경험적으로, 업데이트된 변수의 이름이 할당 왼쪽에 나타나야 합니다. 예시를 들어보겠습니다.
 
 ```js
 /// no-file
