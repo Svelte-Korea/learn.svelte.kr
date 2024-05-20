@@ -2,10 +2,6 @@
 title: 배열과 객체 업데이트하기
 ---
 
-Because Svelte's reactivity is triggered by assignments, using array methods like `push` and `splice` won't automatically cause updates. For example, clicking the 'Add a number' button doesn't currently do anything, even though we're calling `numbers.push(...)` inside `addNumber`.
-
-One way to fix that is to add an assignment that would otherwise be redundant:
-
 스벨트의 반응성은 할당에 의해 트리거되기 때문에 `push` 및 `splice`와 같은 배열 메서드를 사용하면 자동으로 업데이트가 발생하지 않습니다. 예를 들어, 'Add a number' 버튼을 클릭하면 `addNumber` 내에서 `numbers.push(...)`를 호출하고 있음에도 아무 작업도 수행되지 않습니다.
 
 이 문제를 해결하는 한 가지 방법은 중복되는 할당을 추가하는 것입니다.
