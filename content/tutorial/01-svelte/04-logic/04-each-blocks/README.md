@@ -43,7 +43,7 @@ title: Each 블록
 ```svelte
 /// file: App.svelte
 <div>
-	{#each colors as color, +++i+++}
+	{#each colors as color, +++i}+++
 		<button
 			aria-current={selected === color}
 			aria-label={color}
