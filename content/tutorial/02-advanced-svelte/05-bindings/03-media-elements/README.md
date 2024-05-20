@@ -1,10 +1,10 @@
 ---
-title: Media elements
+title: 미디어 요소
 ---
 
-You can bind to properties of `<audio>` and `<video>` elements, making it easy to (for example) build custom player UI, like `AudioPlayer.svelte`.
+<audio> 및 <video> 요소의 속성에 바인딩함으로써 `AudioPlayer.svelte`와 같은 사용자 정의 플레이어 UI 등을 쉽게 구축할 수 있습니다.
 
-First, add the `<audio>` element along with its bindings (we'll use the shorthand form for `src`, `duration` and `paused`):
+먼저, 바인딩과 함께 `<audio>` 요소를 추가합시다. `src`, `duration` 및 `paused`에 대해 축약형을 사용합니다.
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -22,7 +22,7 @@ First, add the `<audio>` element along with its bindings (we'll use the shorthan
 	/>
 ```
 
-Next, add an event handler to the `<button>` that toggles `paused`:
+다음으로, `<button>`에 `paused`를 토글하는 이벤트 핸들러를 추가합시다.
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -33,7 +33,7 @@ Next, add an event handler to the `<button>` that toggles `paused`:
 />
 ```
 
-Our audio player now has basic functionality. Let's add the ability to seek to a specific part of a track by dragging the slider. Inside the slider's `pointerdown` handler there's a `seek` function, where we can update `time`:
+이제 우리 오디오 플레이어는 기본적인 기능을 갖추고 있습니다. 슬라이더를 드래그하여 트랙의 특정 부분으로 이동할 수 있는 기능을 추가해 봅시다. 슬라이더의 `pointerdown` 핸들러 내에 `time`을 업데이트할 수 있는 `seek` 함수가 있습니다.
 
 ```js
 /// file: AudioPlayer.svelte
@@ -48,7 +48,7 @@ function seek(e) {
 }
 ```
 
-When the track ends, be kind — rewind:
+트랙이 끝나면 되감기 기능을 추가합시다.
 
 ```svelte
 /// file: AudioPlayer.svelte
@@ -63,22 +63,22 @@ When the track ends, be kind — rewind:
 />
 ```
 
-The complete set of bindings for `<audio>` and `<video>` is as follows — seven _readonly_ bindings...
+`<audio>` 및 `<video>` 요소에 대한 전체 바인딩은 이하 7개의 _읽기 전용_ 바인딩과
 
-- `duration` (readonly) — the total duration, in seconds
-- `buffered` (readonly) — an array of `{start, end}` objects
-- `seekable` (readonly) — ditto
-- `played` (readonly) — ditto
-- `seeking` (readonly) — boolean
-- `ended` (readonly) — boolean
-- `readyState` (readonly) — number between (and including) 0 and 4
+- `duration` (readonly) — 총 지속 시간(초)
+- `buffered` (readonly) — `{start, end}` 객체 배열
+- `seekable` (readonly) — 위와 동일
+- `played` (readonly) — 위와 동일
+- `seeking` (readonly) — 불리언 값
+- `ended` (readonly) — 불리언 값
+- `readyState` (readonly) — 0에서 4 사이의 숫자(포함)
 
-...and five _two-way_ bindings:
+이하 5개의 _양방향_ 바인딩입니다.
 
-- `currentTime` — the current position of the playhead, in seconds
-- `playbackRate` — speed up or slow down (`1` is 'normal')
-- `paused` — this one should be self-explanatory
-- `volume` — a value between 0 and 1
-- `muted` — a boolean value where true is muted
+- `currentTime` — 재생 헤드의 현재 위치(초)
+- `playbackRate` — 속도 조절 (`1`이 '기본 상태')
+- `paused` — 이 바인딩은 설명이 필요 없습니다
+- `volume` — 0에서 1 사이의 값
+- `muted` — `true`는 음소거된 상태를 나타내는 불리언 값
 
-Videos additionally have readonly `videoWidth` and `videoHeight` bindings.
+비디오에는 추가로 `videoWidth` 및 `videoHeight` 읽기 전용 바인딩이 있습니다.

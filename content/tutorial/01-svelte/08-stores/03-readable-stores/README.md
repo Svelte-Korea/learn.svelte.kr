@@ -1,10 +1,10 @@
 ---
-title: 읽기 가능한 스토어
+title: Readable stores
 ---
 
-모든 스토어가 참조하는 사람에 의해 쓰기 가능할 필요는 없습니다. 예를 들어, 마우스 위치나 사용자의 지리적 위치를 나타내는 스토어가 있을 때, 외부에서 이러한 값을 설정할 수 있는 것은 말이 되지 않습니다. 이러한 경우에는 _읽기 가능한(readable)_ 스토어가 필요합니다.
+Not all stores should be writable by whoever has a reference to them. For example, you might have a store representing the mouse position or the user's geolocation, and it doesn't make sense to be able to set those values from 'outside'. For those cases, we have _readable_ stores.
 
-`stores.js`를 여세요. `readable`의 첫 번째 인자는 초기 값으로, 아직 값이 없으면 `null` 또는 `undefined`일 수 있습니다. 두 번째 인자는 `set` 콜백을 받고 `stop` 함수를 반환하는 `start` 함수입니다. `start` 함수는 스토어가 첫 구독자를 얻을 때 호출되고, `stop`은 마지막 구독자가 구독을 해지할 때 호출됩니다.
+Open `stores.js`. The first argument to `readable` is an initial value, which can be `null` or `undefined` if you don't have one yet. The second argument is a `start` function that takes a `set` callback and returns a `stop` function. The `start` function is called when the store gets its first subscriber; `stop` is called when the last subscriber unsubscribes.
 
 ```js
 /// file: stores.js

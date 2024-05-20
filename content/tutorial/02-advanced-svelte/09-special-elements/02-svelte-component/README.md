@@ -2,9 +2,9 @@
 title: <svelte:component>
 ---
 
-A component can change its type altogether with `<svelte:component>`. In this exercise, we want to show `RedThing.svelte` if the `color` is `red`, `GreenThing.svelte` if it's `green`, and so on.
+컴포넌트는 `<svelte:component>`를 사용하여 유형을 완전히 변경할 수 있습니다. 이 연습에서는 `color`가 `red`인 경우 `RedThing.svelte`, `green`인 경우 `GreenThing.svelte` 하는 식으로 표시하고자 합니다.
 
-We _could_ do this with a sequence of `if` blocks...
+이것을 일련의 `if` 블록으로 할 수 _있지만_...
 
 ```svelte
 /// file: App.svelte
@@ -17,7 +17,7 @@ We _could_ do this with a sequence of `if` blocks...
 {/if}
 ```
 
-...but it's a little cumbersome. Instead, we can create a single dynamic component:
+...이는 다소 번거롭습니다. 대신, 단일 동적 컴포넌트를 생성할 수 있습니다.
 
 ```svelte
 /// file: App.svelte
@@ -30,4 +30,4 @@ We _could_ do this with a sequence of `if` blocks...
 +++<svelte:component this={selected.component} />+++
 ```
 
-The `this` value can be any component constructor, or a falsy value — if it's falsy, no component is rendered.
+`this` 값은 어떤 컴포넌트 생성자나 거짓(falsy) 값일 수 있습니다. 거짓 값이면, 아무 컴포넌트도 렌더링되지 않습니다.

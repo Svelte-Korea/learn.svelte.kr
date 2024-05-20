@@ -1,8 +1,8 @@
 ---
-title: Slot fallbacks
+title: 슬롯 대체 콘텐츠(slot fallbacks)
 ---
 
-A component can specify _fallbacks_ for any slots that are left empty, by putting content inside the `<slot>` element:
+컴포넌트는 `<slot>` 요소 안에 콘텐츠를 넣어서 비어 있는 슬롯에 대한 _대체 콘텐츠_ 를 지정할 수 있습니다.
 
 ```svelte
 /// file: Card.svelte

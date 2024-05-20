@@ -1,10 +1,10 @@
 ---
-title: DOM 이벤트 전달(forwarding)
+title: DOM event forwarding
 ---
 
-이벤트 전달은 DOM 이벤트에도 작동합니다.
+Event forwarding works for DOM events too.
 
-`<BigRedButton>`에서 클릭에 대한 알림을 받고 싶다면, `BigRedButton.svelte`의 `<button>` 요소에서 `click` 이벤트를 전달하면 됩니다.
+We want to get notified of clicks on our `<BigRedButton>` — to do that, we just need to forward `click` events on the `<button>` element in `BigRedButton.svelte`:
 
 ```svelte
 /// file: BigRedButton.svelte

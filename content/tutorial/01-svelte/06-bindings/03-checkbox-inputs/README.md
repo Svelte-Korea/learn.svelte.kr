@@ -1,8 +1,8 @@
 ---
-title: 체크박스 입력
+title: Checkbox inputs
 ---
 
-체크박스는 상태 간 전환에 사용됩니다. `input.value` 대신 `input.checked`에 바인딩합시다.
+Checkboxes are used for toggling between states. Instead of binding to `input.value`, we bind to `input.checked`:
 
 ```svelte
 /// file: App.svelte

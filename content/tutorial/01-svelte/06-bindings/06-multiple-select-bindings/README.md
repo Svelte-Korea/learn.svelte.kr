@@ -1,10 +1,10 @@
 ---
-title: Select 요소의 multiple 속성
+title: Select multiple
 ---
 
-`<select>` 요소에 `multiple` 속성을 추가하면, 단일 값을 선택하는 대신 배열을 채웁니다.
+A `<select>` element can have a `multiple` attribute, in which case it will populate an array rather than selecting a single value.
 
-체크박스를 `<select multiple>`로 교체합시다.
+Replace the checkboxes with a `<select multiple>`:
 
 ```svelte
 /// file: App.svelte
@@ -17,6 +17,6 @@ title: Select 요소의 multiple 속성
 +++</select>+++
 ```
 
-`<option>`의 값이 요소의 내용과 동일하기 때문에 `value` 속성을 생략할 수 있습니다.
+Note that we're able to omit the `value` attribute on the `<option>`, since the value is identical to the element's contents.
 
-> 여러 옵션을 선택하려면 `control` 키(또는 MacOS에서는 `command` 키)를 누르고 있어야 합니다.
+> Press and hold the `control` key (or the `command` key on MacOS) to select multiple options.
