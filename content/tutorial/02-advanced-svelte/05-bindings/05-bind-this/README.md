@@ -2,11 +2,11 @@
 title: This
 ---
 
-In a [previous exercise](onmount), we learned how to use the `onMount` lifecycle function to paint to a canvas.
+[이전 연습](onmount)에서 `onMount` 생명주기 함수를 사용하여 캔버스에 그림을 그리는 방법을 배웠습니다.
 
-But the example is buggy — it's using `document.querySelector('canvas')`, which will always return the first `<canvas>` found on the page, which might not be the one belonging to our component.
+하지만 이 예제에는 버그가 있습니다 — `document.querySelector('canvas')`를 사용하고 있어, 항상 페이지에서 첫 번째 `<canvas>` 요소를 반환하게 되며, 이는 우리 컴포넌트에 속한 것이 아닐 수 있습니다.
 
-Instead, we can use the readonly `this` binding to get a reference to the element:
+대신, 읽기 전용 `this` 바인딩을 사용하여 요소에 대한 참조를 얻을 수 있습니다.
 
 ```js
 /// file: App.svelte
@@ -36,4 +36,4 @@ onMount(() => {
 ></canvas>
 ```
 
-Note that the value of `canvas` will be `undefined` until the component has mounted.
+캔버스의 값은 컴포넌트가 마운트될 때까지 `undefined`임에 유의하세요.

@@ -1,8 +1,8 @@
 ---
-title: Checking for slot content
+title: 슬롯 콘텐츠 확인
 ---
 
-In some cases, you may want to control parts of your component based on whether slotted content was passed in. For example, if we remove the `<header>` from `App.svelte`...
+일부 경우에는 슬롯 콘텐츠가 전달되었는지 여부에 따라 컴포넌트의 일부를 제어하고 싶을 수 있습니다. 예를 들어, `App.svelte`에서 `<header>`를 제거하면...
 
 ```svelte
 /// file: App.svelte
@@ -23,9 +23,9 @@ In some cases, you may want to control parts of your component based on whether 
 </div>
 ```
 
-...we're left with an ugly double border because `FilterableList.svelte` is still rendering the `<div class="header">`.
+...`FilterableList.svelte`는 여전히 `<div class="header">`를 렌더링하고 있어 보기 흉한 이중 경계선이 남습니다.
 
-We can fix that by using the special `$$slots` variable in `FilterableList.svelte`:
+이를 `FilterableList.svelte`에서 특수 변수 `$$slots`를 사용하여 수정할 수 있습니다:
 
 ```svelte
 /// file: FilterableList.svelte
