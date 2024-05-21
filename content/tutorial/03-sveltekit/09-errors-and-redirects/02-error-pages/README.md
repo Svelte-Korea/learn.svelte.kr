@@ -1,10 +1,10 @@
 ---
-title: Error pages
+title: 오류 페이지
 ---
 
-When something goes wrong inside a `load` function, SvelteKit renders an error page.
+`load` 함수 내에서 문제가 발생하면 스벨트킷은 오류 페이지를 렌더링합니다.
 
-The default error page is somewhat bland. We can customize it by creating a `src/routes/+error.svelte` component:
+기본 오류 페이지는 다소 밋밋합니다. `src/routes/+error.svelte` 컴포넌트를 생성해서 이를 사용자 정의할 수 있습니다.
 
 ```svelte
 /// file: src/routes/+error.svelte
@@ -19,11 +19,11 @@ The default error page is somewhat bland. We can customize it by creating a `src
 </span>
 ```
 
-Notice that the `+error.svelte` component is rendered inside the root `+layout.svelte`. We can create more granular `+error.svelte` boundaries:
+`+error.svelte` 컴포넌트가 루트 `+layout.svelte` 내에 렌더링된다는 점에 유의하세요. 더 세분화된 `+error.svelte` 경계를 생성할 수 있습니다.
 
 ```svelte
 /// file: src/routes/expected/+error.svelte
 <h1>this error was expected</h1>
 ```
 
-This component will be rendered for `/expected`, while the root `src/routes/+error.svelte` page will be rendered for any other errors that occur.
+이 컴포넌트는 `/expected`에 대해 렌더링되며, 다른 오류가 발생할 경우 루트 `src/routes/+error.svelte` 페이지가 렌더링됩니다.
