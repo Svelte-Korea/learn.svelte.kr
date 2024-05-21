@@ -1,12 +1,12 @@
 ---
-title: Progressive enhancement
+title: 점진적 향상
 ---
 
-Because we're using `<form>`, our app works even if the user doesn't have JavaScript ([which happens more often than you probably think](https://kryogenix.org/code/browser/everyonehasjs.html)). That's great, because it means our app is resilient.
+우리 앱은 `<form>`을 사용하므로 사용자가 자바스크립트를 사용하지 않아도 작동합니다. ([이는 생각보다 자주 발생합니다.](https://kryogenix.org/code/browser/everyonehasjs.html)) 이는 앱이 강력하다는 의미이므로 좋습니다.
 
-Most of the time, users _do_ have JavaScript. In those cases, we can _progressively enhance_ the experience, the same way SvelteKit progressively enhances `<a>` elements by using client-side routing.
+대부분의 경우 사용자는 자바스크립트를 사용 _합니다._ 이러한 경우 스벨트킷이 클라이언트 측 라우팅을 사용하여 `<a>` 요소를 점진적으로 향상시키는 것과 동일한 방식으로 경험을 _점진적으로 향상시킬_ 수 있습니다.
 
-Import the `enhance` function from `$app/forms`...
+`$app/forms`에서 `enhance` 함수를 가져옵시다.
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -18,7 +18,7 @@ Import the `enhance` function from `$app/forms`...
 </script>
 ```
 
-...and add the `use:enhance` directive to the `<form>` elements:
+그리고 `<form>` 요소에 `use:enhance` 지시어를 추가합시다.
 
 ```svelte
 /// file: src/routes/+page.svelte
@@ -30,14 +30,14 @@ Import the `enhance` function from `$app/forms`...
 <form method="POST" action="?/delete" +++use:enhance+++>
 ```
 
-And that's all it takes! Now, when JavaScript is enabled, `use:enhance` will emulate the browser-native behaviour except for the full-page reloads. It will:
+이걸로 충분합니다! 이제 자바스크립트가 활성화되면 `use:enhance`가 전체 페이지 리로드를 제외하고 브라우저 기본 동작을 에뮬레이트합니다. 이는 다음 동작들을 수행합니다.
 
-- update the `form` prop
-- invalidate all data on a successful response, causing `load` functions to re-run
-- navigate to the new page on a redirect response
-- render the nearest error page if an error occurs
+- `form` 프롭을 업데이트합니다.
+- 성공적인 응답 시 모든 데이터를 무효화하여 `load` 함수를 다시 실행합니다.
+- 리디렉션 응답 시 새 페이지로 이동합니다.
+- 오류가 발생하면 가장 가까운 오류 페이지를 렌더링합니다.
 
-Now that we're updating the page rather than reloading it, we can get fancy with things like transitions:
+이제 페이지를 리로드하는 대신 업데이트하므로 전환 같은 작업이 추가로 가능합니다.
 
 ```svelte
 /// file: src/routes/+page.svelte
