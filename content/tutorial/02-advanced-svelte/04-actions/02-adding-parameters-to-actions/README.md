@@ -1,12 +1,12 @@
 ---
-title: Adding parameters
+title: 매개변수 더하기
 ---
 
-Like transitions and animations, an action can take an argument, which the action function will be called with alongside the element it belongs to.
+전환 및 애니메이션과 마찬가지로 액션은 인자를 취할 수 있으며, 액션 함수는 해당 요소와 함께 호출됩니다.
 
-In this exercise, we want to add a tooltip to the `<button>` using the [`Tippy.js`](https://atomiks.github.io/tippyjs/) library. The action is already wired up with `use:tooltip`, but if you hover over the button (or focus it with the keyboard) the tooltip contains no content.
+이 연습에서는 [`Tippy.js`](https://atomiks.github.io/tippyjs/) 라이브러리를 사용하여 `<button>`에 툴팁을 추가하고자 합니다. 액션은 이미 `use:tooltip`으로 연결되어 있지만, 버튼을 가리키거나(또는 키보드로 포커스하면) 툴팁에 내용이 표시되지 않습니다.
 
-First, the action needs to accept some options and pass them to Tippy:
+먼저, 액션이 옵션을 받아 Tippy에 전달해야 합니다.
 
 ```js
 /// file: App.svelte
@@ -21,7 +21,7 @@ function tooltip(node, +++options+++) {
 }
 ```
 
-Then, we need to pass some options into the action:
+그런 다음, 액션에 옵션을 전달해야 합니다.
 
 ```svelte
 /// file: App.svelte
@@ -30,7 +30,7 @@ Then, we need to pass some options into the action:
 </button>
 ```
 
-The tooltip now works — almost. If we change the text in the `<input>`, the tooltip will not reflect the new content. We can fix that by adding an `update` method to the returned object.
+이제 툴팁이 거의 작동합니다. 다만 `<input>`의 텍스트를 변경하면 툴팁에 새로운 내용이 반영되지 않는데, 반환된 객체에 `update` 메서드를 추가하여 해결할 수 있습니다.
 
 ```js
 /// file: App.svelte
