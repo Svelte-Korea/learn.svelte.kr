@@ -1,8 +1,8 @@
 ---
-title: Shorthand class directive
+title: 축약형 class 지시어
 ---
 
-Often, the name of the class will be the same as the name of the value it depends on:
+종종 클래스 이름은 클래스가 의존하는 값의 이름과 동일합니다.
 
 ```svelte
 /// no-file
@@ -13,7 +13,7 @@ Often, the name of the class will be the same as the name of the value it depend
 >
 ```
 
-In those cases we can use a shorthand form:
+이런 경우 축약형을 사용할 수 있습니다.
 
 ```svelte
 /// file: App.svelte
