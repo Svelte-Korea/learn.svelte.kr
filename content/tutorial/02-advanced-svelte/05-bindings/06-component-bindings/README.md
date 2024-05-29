@@ -1,8 +1,8 @@
 ---
-title: Component bindings
+title: 컴포넌트 바인딩
 ---
 
-Just as you can bind to properties of DOM elements, you can bind to component props. For example, we can bind to the `value` prop of this `<Keypad>` component as though it were a form element:
+DOM 요소의 프로퍼티(properties)에 바인딩할 수 있는 것처럼, 컴포넌트 프롭(props)에도 바인딩할 수 있습니다. 예를 들어, `<Keypad>` 컴포넌트의 `value` 프롭에 이것이 마치 폼 요소인 것처럼 바인딩할 수 있습니다.
 
 ```svelte
 /// file: App.svelte
@@ -12,6 +12,6 @@ Just as you can bind to properties of DOM elements, you can bind to component pr
 />
 ```
 
-Now, when the user interacts with the keypad, the value of `pin` in the parent component is immediately updated.
+이제 사용자가 키패드와 상호 작용할 때, 부모 컴포넌트의 `pin` 값이 즉시 업데이트됩니다.
 
-> Use component bindings sparingly. It can be difficult to track the flow of data around your application if you have too many of them, especially if there is no 'single source of truth'.
+> 컴포넌트 바인딩은 적절히 사용하세요. 너무 많이 사용하면 애플리케이션의 데이터 흐름을 추적하기 어려워질 수 있으며, 특히 '단일 진실의 원천'이 없는 경우 더욱 그렇습니다.

@@ -1,5 +1,5 @@
 {
-	"title": "Advanced bindings",
+	"title": "고급 바인딩",
 	"scope": {
 		"prefix": "/src/lib/",
 		"name": "src"
