@@ -1,5 +1,5 @@
 {
-	"title": "Lifecycle",
+	"title": "생명주기(lifecycle)",
 	"scope": {
 		"prefix": "/src/lib/",
 		"name": "src"
