@@ -1,34 +1,34 @@
 ---
-title: Dynamic attributes
+title: 동적 어트리뷰트
 ---
 
-Just like you can use curly braces to control text, you can use them to control element attributes.
+텍스트를 제어하기 위해 중괄호를 사용할 수 있는 것처럼, 요소 어트리뷰트(element attributes)도 제어할 수 있습니다.
 
-Our image is missing a `src` — let's add one:
+예시 코드의 이미지에는 `src` 가 없습니다. 아래처럼 추가해봅시다.
 
 ```svelte
 /// file: App.svelte
 <img +++src={src}+++ />
 ```
 
-That's better. But if you hover over the `<img>` in the editor, Svelte is giving us a warning:
+더 낫군요. 그렇지만 커서를 에디터의 `<img>`위에 올리면 스벨트가 다음과 같은 경고를 해 줍니다.
 
-> A11y: &lt;img&gt; element should have an alt attribute
+> A11y: &lt;img&gt; element should have an alt attribute (번역: A11y: &lt;img&gt;요소는 alt 어트리뷰트를 가질 수 있습니다)
 
-When building web apps, it's important to make sure that they're _accessible_ to the broadest possible userbase, including people with (for example) impaired vision or motion, or people without powerful hardware or good internet connections. Accessibility (shortened to a11y) isn't always easy to get right, but Svelte will help by warning you if you write inaccessible markup.
+웹 앱을 구축할 때는 시력이나 동작에 장애가 있는 사람, 강력한 하드웨어나 인터넷 연결이 원활하지 않은 사람 등 최대한 광범위한 사용자층이 '액세스할 수 있는지'를 확인하는 것이 중요합니다. 접근성(Accessibility, 줄여서 a11y)을 올바르게 설정하는 것이 항상 쉬운 일은 아니지만, 접근하기 어려운 마크업을 작성할 경우 스벨트가 경고를 표시하여 도움을 줍니다.
 
-In this case, we're missing the `alt` attribute that describes the image for people using screenreaders, or people with slow or flaky internet connections that can't download the image. Let's add one:
+이 경우에는, 스크린리더를 사용하거나 인터넷 연결 상태가 좋지 않아서 이미지를 다운로드할 수 없는 사람들에게 이미지를 설명하는 `alt` 어트리뷰트가 빠져 있습니다. 추가해 봅시다.
 
 ```svelte
 /// file: App.svelte
 <img src={src} +++alt="A man dances."+++ />
 ```
 
-We can use curly braces _inside_ attributes. Try changing it to `"{name} dances."` — remember to declare a `name` variable in the `<script>` block.
+어트리뷰트 _안에_ 중괄호를 사용할 수 있습니다. 위 내용을 `"{name} dances."` 로 바꿔보세요. `name` 변수는 `<script>` 블록 안에 선언되어 있다는 것을 기억하세요.
 
 ## Shorthand attributes
 
-It's not uncommon to have an attribute where the name and value are the same, like `src={src}`. Svelte gives us a convenient shorthand for these cases:
+`src={src}` 와 같이 이름과 값이 같은 것은 종종 일어나는 일입니다. 스벨트는 이러한 경우에 편리한 단축 문법을 제공합니다.
 
 ```svelte
 /// file: App.svelte
