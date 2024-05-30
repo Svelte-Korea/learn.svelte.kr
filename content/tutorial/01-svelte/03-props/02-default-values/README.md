@@ -2,7 +2,7 @@
 title: 기본값
 ---
 
-프롭의 기본값을 쉽게 지정할 수 있습니다. `Nested.svelte`를 봐 봅시다.
+프롭의 기본값을 쉽게 지정할 수 있습니다. `Nested.svelte`를 살펴봅시다.
 
 ```svelte
 /// file: Nested.svelte
