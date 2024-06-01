@@ -1,8 +1,8 @@
 ---
-title: Default values
+title: 기본값
 ---
 
-We can easily specify default values for props in `Nested.svelte`:
+프롭의 기본값을 쉽게 지정할 수 있습니다. `Nested.svelte`를 살펴봅시다.
 
 ```svelte
 /// file: Nested.svelte
@@ -11,7 +11,7 @@ We can easily specify default values for props in `Nested.svelte`:
 </script>
 ```
 
-If we now add a second component _without_ an `answer` prop, it will fall back to the default:
+이제 `answer` 프롭 _없이_ 두 번째 컴포넌트를 추가하면, 기본값이 사용될 것입니다.
 
 ```svelte
 /// file: App.svelte
