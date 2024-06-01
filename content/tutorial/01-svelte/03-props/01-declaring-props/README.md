@@ -1,10 +1,10 @@
 ---
-title: Declaring props
+title: 프롭 선언하기
 ---
 
-So far, we've dealt exclusively with internal state — that is to say, the values are only accessible within a given component.
+지금까지 오직 내부 상태만 다뤘습니다. 다시 말해 컴포넌트 내에서만 값에 접근 가능했습니다.
 
-In any real application, you'll need to pass data from one component down to its children. To do that, we need to declare _properties_, generally shortened to 'props'. In Svelte, we do that with the `export` keyword. Edit the `Nested.svelte` component:
+실제 애플리케이션에서는 데이터를 한 컴포넌트에서 자식 컴포넌트로 전달해야 할 필요가 있습니다. 이를 위해 우리는 _속성(properties)_ 를 선언해야 하며, 일반적으로 프롭('props')이라고 줄여 부릅니다. 스벨트에서는 `export` 키워드를 사용하여 이를 수행합니다. `Nested.svelte` 컴포넌트를 수정해 보세요.
 
 ```svelte
 /// file: Nested.svelte
@@ -13,4 +13,4 @@ In any real application, you'll need to pass data from one component down to its
 </script>
 ```
 
-> Just like `$:`, this may feel a little weird at first. That's not how `export` normally works in JavaScript modules! Just roll with it for now — it'll soon become second nature.
+> `$:`와 마찬가지로, 처음에는 이 방식이 조금 이상하게 느껴질 수 있습니다. 자바스크립트 모듈에서 `export`는 보통 이렇게 작동하지 않으니까요! 하지만 일단 따라 해보세요. 곧 자연스럽게 익숙해질 것입니다.
