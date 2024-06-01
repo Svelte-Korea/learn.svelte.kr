@@ -1,5 +1,5 @@
 {
-	"title": "Logic",
+	"title": "로직",
 	"scope": {
 		"prefix": "/src/lib/",
 		"name": "src"
