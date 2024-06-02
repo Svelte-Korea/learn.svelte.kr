@@ -1,19 +1,19 @@
 ---
-title: Keyed each blocks
+title: Key가 지정된 each 블록
 ---
 
-By default, when you modify the value of an `each` block, it will add and remove DOM nodes at the _end_ of the block, and update any values that have changed. That might not be what you want.
+기본적으로 `each` 블록의 값을 수정하면, 블록의 _끝_ 에서 DOM 노드를 추가 및 제거하고 변경된 값을 업데이트합니다. 이는 원하는 동작이 아닐 수 있습니다.
 
-It's easier to show why than to explain. The `<Thing>` component sets the emoji as a constant on initialization, but the name is passed in via a prop.
+이유를 설명하기보다는 보여주는 게 더 쉽습니다. `<Thing>` 컴포넌트는 초기화 시 이모지를 상수로 설정하지만, 이름은 프롭을 통해 전달됩니다.
 
-Click the 'Remove first thing' button a few times, and notice what happens:
+'첫 번째 항목 제거' 버튼을 몇 번 클릭하고 무슨 일이 일어나는지 확인해 보세요.
 
-1. It removes the last component.
-2. It then updates the `name` value in the remaining DOM nodes, but not the emoji, which is fixed when each `<Thing>` is created.
+1. 마지막 컴포넌트를 제거합니다.
+2. 나머지 DOM 노드의 `name` 값을 업데이트하지만, 각 `<Thing>`이 생성될 때 고정된 이모지는 업데이트하지 않습니다.
 
-Instead, we'd like to remove only the first `<Thing>` component and its DOM node, and leave the others unaffected.
+이 대신에 첫 번째 `<Thing>` 컴포넌트와 그 DOM 노드만 제거하고 나머지는 영향을 받지 않도록 수정해봅시다.
 
-To do that, we specify a unique identifier (or "key") for each iteration of the `each` block:
+이를 위해 `each` 블록 안의 각 반복에 대해 고유 식별자(또는 "key")를 지정합니다.
 
 ```svelte
 /// file: App.svelte
@@ -22,6 +22,6 @@ To do that, we specify a unique identifier (or "key") for each iteration of the 
 {/each}
 ```
 
-Here, `(thing.id)` is the _key_, which tells Svelte how to figure out what to update when the values (`name` in this example) change.
+여기서 `(thing.id)`는 _키_ 로, 값(이 예제에서는 `name`)이 변경될 때 스벨트가 무엇을 업데이트해야 하는지 알아낼 수 있게 해줍니다.
 
-> You can use any object as the key, as Svelte uses a `Map` internally — in other words you could do `(thing)` instead of `(thing.id)`. Using a string or number is generally safer, however, since it means identity persists without referential equality, for example when updating with fresh data from an API server.
+> 스벨트는 내부적으로 `Map`을 사용하므로 키로 아무 객체나 사용할 수 있습니다. 즉, `(thing.id)` 대신 `(thing)`을 사용할 수도 있습니다. 그러나 문자열이나 숫자를 사용하는 것이 일반적으로 더 안전합니다. 예를 들어, API 서버에서 새 데이터를 업데이트하는 상황에서도, 참조가 동일하지 않더라도 동일성이 유지되게 해준다는 뜻입니다.
