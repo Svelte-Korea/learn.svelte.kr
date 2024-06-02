@@ -1,10 +1,10 @@
 ---
-title: Each blocks
+title: Each 블록
 ---
 
-When building user interfaces you'll often find yourself working with lists of data. In this exercise, we've repeated the `<button>` markup multiple times — changing the colour each time — but there's still more to add.
+사용자 인터페이스를 구축할 때 데이터 목록을 자주 다루게 됩니다. 이 연습에서는 `<button>` 마크업을 여러 번 반복해서 각기 다른 색상이 된 상태입니다. 여기서 개선해 봅시다.
 
-Instead of laboriously copying, pasting and editing, we can get rid of all but the first button, then use an `each` block:
+일일이 복사, 붙여넣기 및 편집하는 대신 첫 버튼만 남기고, `each` 블록을 사용할 수 있습니다.
 
 ```svelte
 /// file: App.svelte
@@ -20,9 +20,9 @@ Instead of laboriously copying, pasting and editing, we can get rid of all but t
 </div>
 ```
 
-> The expression (`colors`, in this case) can be any array or array-like object (i.e. it has a `length` property). You can loop over generic iterables with `each [...iterable]`.
+이 예제에 사용되는 `colors` 와 같이 `each` 와 같이 쓸 수 있는 표현식으로는 `length` 속성이 있는, 배열이나 배열과 유사한 객체면 다 가능합니다. 일반적인 이터러블(iterable)은 `each [...iterable]` 형태로 순회 가능합니다.
 
-Now we need to use the `color` variable in place of `"red"`:
+이제 `"red"`의 위치에 `color` 변수를 사용해야 합니다.
 
 ```svelte
 /// file: App.svelte
@@ -38,7 +38,7 @@ Now we need to use the `color` variable in place of `"red"`:
 </div>
 ```
 
-You can get the current _index_ as a second argument, like so:
+현재의 _인덱스_ 를 두 번째 인자로 가져올 수 있습니다.
 
 ```svelte
 /// file: App.svelte
