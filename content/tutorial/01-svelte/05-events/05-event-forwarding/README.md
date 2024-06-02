@@ -1,12 +1,12 @@
 ---
-title: Event forwarding
+title: 이벤트 전달
 ---
 
-Unlike DOM events, component events don't _bubble_. If you want to listen to an event on some deeply nested component, the intermediate components must _forward_ the event.
+DOM 이벤트와 달리, 컴포넌트 이벤트는 _버블링_ 되지 않습니다. 깊게 중첩된 컴포넌트에서 이벤트를 듣고 싶다면, 중간 컴포넌트들이 이벤트를 _전달_ 해야 합니다.
 
-In this case, we have the same `App.svelte` and `Inner.svelte` as in the [previous chapter](/tutorial/component-events), but there's now an `Outer.svelte` component that contains `<Inner/>`.
+이번 예제는 [이전 장](/tutorial/component-events)과 동일한 `App.svelte`와 `Inner.svelte`가 있지만, 이제 `<Inner/>`를 포함하는 `Outer.svelte` 컴포넌트가 있습니다.
 
-One way we _could_ solve the problem is adding `createEventDispatcher` to `Outer.svelte`, listening for the `message` event, and creating a handler for it:
+이 문제를 해결하는 한 가지 방법은 `Outer.svelte`에 `createEventDispatcher`를 추가하여 `message` 이벤트를 듣고, 이를 처리할 핸들러를 만드는 것입니다.
 
 ```svelte
 /// file: Outer.svelte
@@ -24,7 +24,7 @@ One way we _could_ solve the problem is adding `createEventDispatcher` to `Outer
 <Inner on:message={forward}/>
 ```
 
-But that's a lot of code to write, so Svelte gives us an equivalent shorthand — an `on:message` event directive without a value means 'forward all `message` events'.
+하지만 이는 많은 코드를 작성해야 하므로, 스벨트는 이에 대한 간단한 방법을 제공합니다. 값이 없는 `on:message` 이벤트 지시어는 '모든 `message` 이벤트를 전달'한다는 의미입니다.
 
 ```svelte
 /// file: Outer.svelte
