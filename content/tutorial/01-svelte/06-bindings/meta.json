@@ -1,5 +1,5 @@
 {
-	"title": "Bindings",
+	"title": "바인딩",
 	"scope": {
 		"prefix": "/src/lib/",
 		"name": "src"

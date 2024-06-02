@@ -1,19 +1,19 @@
 ---
-title: Textarea inputs
+title: 텍스트 영역 입력
 ---
 
-The `<textarea>` element behaves similarly to a text input in Svelte — use `bind:value`:
+`<textarea>` 요소는 스벨트에서 텍스트 입력과 유사하게 동작합니다. `bind:value`를 사용해봅시다.
 
 ```svelte
 /// file: App.svelte
 <textarea +++bind:value=+++{value}></textarea>
 ```
 
-In cases like these, where the names match, we can also use a shorthand form:
+이처럼 이름이 일치하는 경우에는, 축약형을 사용할 수도 있습니다.
 
 ```svelte
 /// file: App.svelte
 <textarea +++bind:value+++></textarea>
 ```
 
-This applies to all bindings, not just textareas.
+이 방법은 텍스트 영역뿐만 아니라 모든 바인딩에 적용됩니다.
