@@ -1,10 +1,10 @@
 ---
-title: setContext and getContext
+title: setContext와 getContext
 ---
 
-The context API provides a mechanism for components to 'talk' to each other without passing around data and functions as props, or dispatching lots of events. It's an advanced feature, but a useful one. In this exercise, we're going to recreate [Schotter](https://collections.vam.ac.uk/item/O221321/schotter-print-nees-georg/) by George Nees — one of the pioneers of generative art — using the context API.
+컨텍스트 API는 데이터와 함수를 프롭(props)으로 전달하거나 많은 이벤트를 디스패치하지 않고도 컴포넌트 간의 '대화'를 가능하게 하는 메커니즘을 제공합니다. 이는 고급 기능이지만 유용한 기능입니다. 이 연습에서는 생성 예술의 선구자 중 한 명인 조지 니스(George Nees)의 [Schotter](https://collections.vam.ac.uk/item/O221321/schotter-print-nees-georg/)를 컨텍스트 API를 사용하여 재구성할 것입니다.
 
-Inside `Canvas.svelte`, there's an `addItem` function that adds an item to the canvas. We can make it available to components inside `<Canvas>`, like `<Square>`, with `setContext`:
+`Canvas.svelte` 내부에, 캔버스에 항목을 추가하는 `addItem` 함수가 있습니다. `setContext`를 사용하여 이를 `<Canvas>` 내부의 `<Square>`와 같은 컴포넌트에서 사용할 수 있도록 할 수 있습니다.
 
 ```svelte
 /// file: Canvas.svelte
@@ -27,7 +27,7 @@ Inside `Canvas.svelte`, there's an `addItem` function that adds an item to the c
 </script>
 ```
 
-Inside child components, we can now get the context with, well, `getContext`:
+이제 자식 컴포넌트 내부에서 `getContext`를 사용하여 컨텍스트를 가져올 수 있습니다.
 
 ```svelte
 /// file: Square.svelte
@@ -45,7 +45,7 @@ Inside child components, we can now get the context with, well, `getContext`:
 </script>
 ```
 
-So far, so... boring. Let's add some randomness to the grid:
+지금까지는 흥미롭지 않습니다. 이제 그리드에 약간의 무작위성을 추가해 봅시다.
 
 ```svelte
 /// file: App.svelte
@@ -65,13 +65,13 @@ So far, so... boring. Let's add some randomness to the grid:
 </div>
 ```
 
-Like [lifecycle functions](/tutorial/onmount), `setContext` and `getContext` must be called during component initialisation. (The context key (`'canvas'` in this case) can be anything you like, including non-strings, which is useful for controlling who can access the context.)
+[lifecycle functions](/tutorial/onmount)과 마찬가지로, `setContext`와 `getContext`는 컴포넌트 초기화 중에 호출되어야 합니다. (컨텍스트 키(여기에서는 `'canvas'`)는 문자열이 아닌 것을 포함해 원하는 모든 것이 될 수 있으며, 이는 컨텍스트에 누가 접근할 수 있는지 제어하는 데 유용합니다.)
 
-Your context object can include anything, including stores. This allows you to pass values that change over time to child components:
+컨텍스트 객체는 스토어를 포함하여 무엇이든 포함할 수 있습니다. 이를 통해 시간에 따라 변경되는 값을 자식 컴포넌트에 전달할 수 있습니다.
 
 ```js
 /// no-file
-// in a parent component
+// 부모 컴포넌트에서
 import { setContext } from 'svelte';
 import { writable } from 'svelte/store';
 
@@ -79,9 +79,10 @@ setContext('my-context', {
 	count: writable(0)
 });
 ```
+
 ```js
 /// no-file
-// in a child component
+// 자식 컴포넌트에서
 import { getContext } from 'svelte';
 
 const { count } = getContext('my-context');
