@@ -2,9 +2,9 @@
 title: onMount
 ---
 
-Every component has a _lifecycle_ that starts when it is created, and ends when it is destroyed. There are a handful of functions that allow you to run code at key moments during that lifecycle. The one you'll use most frequently is `onMount`, which runs after the component is first rendered to the DOM.
+모든 컴포넌트는 생성될 때 시작되고 파괴될 때 끝나는 _생명주기_ 를 가집니다. 이 생명주기 동안 특정 순간에 코드를 실행할 수 있는 몇 가지 함수가 있습니다. 그 중 가장 자주 사용하게 될 것은 `onMount`로, 컴포넌트가 처음으로 DOM에 렌더링된 후에 실행됩니다.
 
-In this exercise, we have a `<canvas>` that we'd like to animate, using the `paint` function in `gradient.js`. Begin by importing the `onMount` function from `svelte`:
+이번 연습에는 `gradient.js`의 `paint` 함수를 사용하여 애니메이션을 하고 싶은 `<canvas>`가 있습니다. 먼저 `svelte`에서 `onMount` 함수를 가져옵시다.
 
 ```svelte
 /// file: App.svelte
@@ -14,7 +14,7 @@ In this exercise, we have a `<canvas>` that we'd like to animate, using the `pai
 </script>
 ```
 
-Then, add a callback that runs when the component mounts:
+그런 다음, 컴포넌트가 마운트될 때 실행되는 콜백을 추가합니다:
 
 ```svelte
 /// file: App.svelte
@@ -34,9 +34,9 @@ Then, add a callback that runs when the component mounts:
 </script>
 ```
 
-> In a [later exercise](bind-this), we'll learn how to get an element reference without using `document.querySelector`.
+> [나중의 연습](bind-this)에서 `document.querySelector`를 사용하지 않고 요소 참조를 얻는 방법을 배울 것입니다.
 
-So far so good — you should see gently undulating colours in the shape of the Svelte logo. But there's one problem — the loop will continue even after the component has been destroyed. To fix that, we need to return a cleanup function from `onMount`:
+지금까지는 순조롭게 진행되었습니다. 스벨트 로고 모양으로 부드럽게 움직이는 색상을 볼 수 있을 것입니다. 하지만 하나의 문제가 있는데, 컴포넌트가 파괴된 후에도 루프가 계속됩니다. 이를 해결하려면, `onMount`에서 정리 함수를 반환해야 합니다.
 
 ```js
 /// file: App.svelte
